@@ -23,3 +23,10 @@ header {
     margin-left: 0.5em;
   }
 }
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: $black;
+  stroke-width: 1px;
+}
