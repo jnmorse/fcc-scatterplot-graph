@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { loadData } from '../../actions'
+import * as actions from '../../actions'
 
 export default function Api(options) {
   return function(ComposedComponent) {
@@ -49,6 +49,6 @@ export default function Api(options) {
 
     const mapStateToProps = state => state.api
 
-    return connect(mapStateToProps, { loadData })(Api)
+    return connect(mapStateToProps, actions)(Api)
   }
 }
