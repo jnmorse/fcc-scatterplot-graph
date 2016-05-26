@@ -16,7 +16,7 @@ https://www.freecodecamp.com/challenges/visualize-data-with-a-scatterplot-graph
 ## User Stories
 
 - [X] I can see performance time visualized in a scatter plot graph
-- [ ] I can mouse over a plot to see a tooltip with additional details.
+- [X] I can mouse over a plot to see a tooltip with additional details.
 
 ## Dataset
 

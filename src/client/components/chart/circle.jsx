@@ -37,14 +37,15 @@ class Circle extends Component {
       y: circlePos.cy + 5
     }
 
+    const beenDoping = this.props.racer.Doping !== ''
+
     return (
-      <g
-        onMouseEnter={this.props.showTooltip}
-        onMouseLeave={this.props.hideTooltip}
-      >
+      <g>
         <circle
+          onMouseEnter={this.props.showTooltip}
+          onMouseLeave={this.props.hideTooltip}
           {...circlePos}
-          fill={this.props.Doping ? color.doping.normal : color.noDoping.normal}
+          fill={beenDoping ? color.doping.normal : color.noDoping.normal}
           r='5'
         />
 
