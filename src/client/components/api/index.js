@@ -27,7 +27,8 @@ export default function Api(options) {
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center'
-            }}>
+            }}
+            >
               <h2>Loading...</h2>
             </div>
           )
