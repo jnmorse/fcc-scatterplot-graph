@@ -5,6 +5,10 @@ scatter plot graph with d3.
 
 https://www.freecodecamp.com/challenges/visualize-data-with-a-scatterplot-graph
 
+## Demo
+
+https://still-anchorage-83023.herokuapp.com/
+
 ## Rules
 
 1. Don't look at the example project's code. Figure it out figure it out for
