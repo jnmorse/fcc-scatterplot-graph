@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export const SubTitle = (props) => {
   const { title } = props
@@ -9,5 +10,5 @@ export const SubTitle = (props) => {
 SubTitle.displayName = 'SubTitle'
 
 SubTitle.propTypes = {
-  title: React.PropTypes.string
+  title: PropTypes.string
 }

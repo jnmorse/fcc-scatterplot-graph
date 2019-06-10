@@ -14,9 +14,9 @@ export function loadData(url) {
       payload: result.data
     }))
 
-    .catch(error => dispatch({
-      type: types.DATA_LOAD_FAILURE,
-      payload: error.message
-    }))
+      .catch(error => dispatch({
+        type: types.DATA_LOAD_FAILURE,
+        payload: error.message
+      }))
   }
 }

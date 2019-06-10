@@ -1,95 +1,99 @@
 {
   "name": "FCC-Scatterplot-Graph",
   "version": "0.3.4",
+  "private": true,
   "description": "FCC Project to display a Scatterplot graph with d3",
-  "author": "Joseph Morse <tamed.lionheart@gmail.com> (https://github.com/jnmorse)",
-  "license": "MIT",
-  "homepage": "https://github.com/jnmorse/fcc-scatterplot-graph#readme",
   "keywords": [
     "babel",
+    "d3",
     "express",
     "react",
     "react-redux",
     "redux",
     "sass",
-    "webpack",
-    "d3"
+    "webpack"
   ],
-  "main": "server/index.js",
-  "private": true,
-  "scripts": {
-    "start": "node index.js",
-    "serve": "nodemon index.js",
-    "pretest": "npm run build",
-    "test": "cross-env NODE_ENV=test mocha",
-    "pretest:cov": "npm run build",
-    "test:cov": "cross-env NODE_ENV=test babel-node ./node_modules/isparta/bin/isparta cover ./node_modules/mocha/bin/_mocha -- -R dot",
-    "prebuild": "eslint ./src",
-    "build": "cross-env NODE_ENV=production webpack -p"
+  "homepage": "https://github.com/jnmorse/fcc-scatterplot-graph#readme",
+  "bugs": {
+    "url": "https://github.com/jnmorse/fcc-scatterplot-graph/issues",
+    "email": "tamed.lionheart@gmail.com"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jnmorse/fcc-scatterplot-graph.git"
   },
-  "bugs": {
-    "url": "https://github.com/jnmorse/fcc-scatterplot-graph/issues",
-    "email": "tamed.lionheart@gmail.com"
+  "license": "MIT",
+  "author": "Joseph Morse <tamed.lionheart@gmail.com> (https://github.com/jnmorse)",
+  "main": "server/index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "build": "webpack",
+    "serve": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "d3-array": "^2.2.0",
+    "d3-axis": "^1.0.12",
+    "d3-scale": "^3.0.0",
+    "d3-selection": "^1.4.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.13.4",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
     "autoprefixer": "^9.6.0",
-    "axios": "^0.19.0",
-    "babel-cli": "^6.8.0",
-    "babel-core": "^6.7.6",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.6",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-react": "^6.3.13",
-    "babel-preset-react-hmre": "^1.1.1",
-    "babel-preset-stage-1": "^6.5.0",
     "bootstrap-sass": "^3.3.6",
-    "chai": "^4.2.0",
     "color-js": "^1.0.3",
     "connect-history-api-fallback": "^1.2.0",
+    "core-js": "^3.1.3",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
-    "d3": "^5.9.2",
     "eslint": "^5.16.0",
     "eslint-plugin-react": "^7.13.0",
     "extract-loader": "^3.1.0",
     "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^4.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "image-webpack-loader": "^5.0.0",
-    "isparta": "^4.0.0",
-    "istanbul": "^0.4.3",
     "jquery": "^3.4.1",
-    "jsdom": "^15.1.1",
     "lodash": "^4.12.0",
-    "mocha": "^6.1.4",
-    "mocha-jsdom": "^2.0.0",
     "node-sass": "^4.12.0",
     "nodemon": "^1.9.1",
     "postcss-font-magician": "^2.2.1",
     "postcss-loader": "^3.0.0",
-    "react": "^16.8.6",
-    "react-addons-test-utils": "^15.0.2",
-    "react-dom": "^16.8.6",
-    "react-redux": "^7.0.3",
     "react-transform-hmr": "^1.0.4",
-    "redux": "^4.0.1",
-    "redux-thunk": "^2.1.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-    "supertest": "^4.0.2",
     "url-loader": "^2.0.0",
     "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.3",
     "webpack-dev-middleware": "^3.7.0",
     "webpack-hot-middleware": "^2.10.0",
     "webpack-merge": "^4.2.1"
-  },
-  "dependencies": {
-    "dotenv": "^8.0.0",
-    "express": "^4.13.4",
-    "react-router-dom": "^5.0.1"
   }
 }

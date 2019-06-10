@@ -1,5 +1,9 @@
-import React, { Component, PropTypes } from 'react'
-import d3 from 'd3'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { select } from 'd3-selection'
+import { axisBottom, axisLeft } from 'd3-axis'
+import { scaleTime, scaleLinear } from 'd3-scale'
+import { extent } from 'd3-array'
 import api from '../api'
 import * as color from './colors'
 import Circle from './circle'
@@ -30,31 +34,29 @@ class Chart extends Component {
   componentWillMount() {
     const data = this.props.data
 
-    const xScale = d3.time.scale()
-    .domain(d3.extent(data, d => d.Seconds * 1000))
-    .range([1100, 60])
+    const xScale = scaleTime()
+      .domain(extent(data, d => d.Seconds * 1000))
+      .range([1100, 60])
 
-    const yScale = d3.scale.linear()
-    .domain(d3.extent(data, d => d.Place))
-    .range([20, 640])
+    const yScale = scaleLinear()
+      .domain(extent(data, d => d.Place))
+      .range([20, 640])
 
     this._scales = { xScale, yScale }
   }
 
   componentDidMount() {
-    const xAxis = d3.svg.axis()
-    .scale(this._scales.xScale)
-    .tickFormat(d3.time.format('%M:%S'))
+    const { xScale, yScale } = this._scales
 
-    const yAxis = d3.svg.axis()
-    .orient('left')
-    .scale(this._scales.yScale)
+    const xAxis = axisBottom(xScale)
 
-    d3.select(this._xAxis)
-    .call(xAxis)
+    const yAxis = axisLeft(yScale)
 
-    d3.select(this._yAxis)
-    .call(yAxis)
+    select(this._xAxis)
+      .call(xAxis)
+
+    select(this._yAxis)
+      .call(yAxis)
   }
 
   showTooltip(racer, pos) {
@@ -69,8 +71,8 @@ class Chart extends Component {
 
   renderTooltip() {
     const pos = {
-      top: '480px', // Math.round(this.state.tooltip.pos.y) + 10 + 'px',
-      left: '980px' // Math.round(this.state.tooltip.pos.x) + 10 + 'px'
+      top: '480px',
+      left: '980px'
     }
 
     const { racer } = this.state.tooltip
